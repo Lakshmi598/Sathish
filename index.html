@@ -186,6 +186,15 @@
       text-align: center;
       font-size: 13px;
       color: #5a2540;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
     }
 
     @keyframes fadeIn {
@@ -251,24 +260,24 @@ Lakshmi
         <div class="song-list">
           <div class="song">
             <div class="song-info">
-              <span class="song-title">Our First Song</span>
-              <span class="song-artist">The memory of our beginning</span>
+              <span class="song-title">En Pechava</span>
+              <span class="song-artist">Dude - A song that reminds me of you</span>
             </div>
             <span class="song-icon">🎧</span>
           </div>
 
           <div class="song">
             <div class="song-info">
-              <span class="song-title">Happy Road Trips</span>
-              <span class="song-artist">For all the drives with you</span>
+              <span class="song-title">Our Special Song</span>
+              <span class="song-artist">Add another favorite here</span>
             </div>
-            <span class="song-icon">🚗</span>
+            <span class="song-icon">💕</span>
           </div>
 
           <div class="song">
             <div class="song-info">
-              <span class="song-title">Calm Nights</span>
-              <span class="song-artist">For quiet evenings at home</span>
+              <span class="song-title">Our Song</span>
+              <span class="song-artist">Add one more song</span>
             </div>
             <span class="song-icon">🌙</span>
           </div>
@@ -291,12 +300,32 @@ Lakshmi
       <!-- Gallery -->
       <div class="tab-content" id="gallery">
         <h2>Our Memories</h2>
-        <small>Replace text with real photos later 📷</small>
+        <small>Special moments with you 📷</small>
         <div class="gallery">
-          <div class="gallery-item">🌅 First trip together</div>
-          <div class="gallery-item">🍰 Your last birthday</div>
-          <div class="gallery-item">👨‍👩‍👦 Family moment</div>
-          <div class="gallery-item">💍 Wedding memory</div>
+          <div class="gallery-item">
+            <img src="photo1.jpg" alt="Memory 1">
+            <span>Our special moment</span>
+          </div>
+          <div class="gallery-item">
+            <img src="photo2.jpg" alt="Memory 2">
+            <span>Together forever</span>
+          </div>
+          <div class="gallery-item">
+            <img src="photo3.jpg" alt="Memory 3">
+            <span>Happy times</span>
+          </div>
+          <div class="gallery-item">
+            <img src="photo4.jpg" alt="Memory 4">
+            <span>Love you always</span>
+          </div>
+          <div class="gallery-item">
+            <img src="photo5.jpg" alt="Memory 5">
+            <span>Beautiful memories</span>
+          </div>
+          <div class="gallery-item">
+            <img src="photo6.jpg" alt="Memory 6">
+            <span>Forever with you</span>
+          </div>
         </div>
       </div>
     </div>
