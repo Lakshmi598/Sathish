@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website to My Love</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffd1e3, #ffb6c9);
+      padding: 20px;
+    }
+
+    .wrapper {
+      background: #ffe6ef;
+      border-radius: 30px;
+      padding: 30px 20px 40px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wrapper::before {
+      content: "♡";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255,255,255,0.4);
+      top: -30px;
+      right: 30px;
+    }
+
+    h1.title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ff4b7d;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #aa6178;
+      margin-bottom: 25px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: #ffc7da;
+      color: #7a2845;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn.active {
+      background: #ff5c8a;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* Content card */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 25px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #ff4b7d;
+    }
+
+    .card small {
+      color: #999;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Love Letter */
+    .love-letter {
+      line-height: 1.7;
+      font-size: 15px;
+      color: #5a2540;
+      margin-top: 10px;
+      white-space: pre-line;
+    }
+
+    /* Music list */
+    .song-list {
+      margin-top: 18px;
+    }
+
+    .song {
+      background: #fff5f8;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .song-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .song-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #5a2540;
+    }
+
+    .song-artist {
+      font-size: 12px;
+      color: #a47c8f;
+    }
+
+    .song-icon {
+      font-size: 18px;
+    }
+
+    /* Notes */
+    .note-list {
+      margin-top: 15px;
+      list-style: none;
+    }
+
+    .note-list li {
+      background: #fff5f8;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #5a2540;
+      margin-bottom: 8px;
+    }
+
+    /* Gallery */
+    .gallery {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-item {
+      background: #fff5f8;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: #5a2540;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 22px 14px 30px;
+      }
+      h1.title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="title">Website to My Love</h1>
+    <p class="subtitle">
+      Happy Birthday, my love 💖 – made with love on 1 December.
+    </p>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="love">💌 Love Letter</button>
+      <button class="tab-btn" data-tab="music">🎵 Music</button>
+      <button class="tab-btn" data-tab="notes">📝 Notes</button>
+      <button class="tab-btn" data-tab="gallery">📸 Gallery</button>
+    </div>
+
+    <div class="card">
+      <!-- Love Letter -->
+      <div class="tab-content active" id="love">
+        <h2>To My Husband</h2>
+        <small>From your wife, with all my heart</small>
+        <p class="love-letter">
+Dear Sathish,
+
+Happy Birthday! 🎂💕
+
+Thank you for being my best friend, my safe place, and my biggest support.
+This little website is my small surprise for you, to say:
+
+I love you when you smile,
+I love you when you are tired,
+I love you even on the days that feel heavy.
+
+I'm so grateful to walk this life with you.
+Let's keep laughing, fighting together, and building our dreams side by side.
+
+With all my love,
+Lakshmi
+        </p>
+      </div>
+
+      <!-- Music -->
+      <div class="tab-content" id="music">
+        <h2>Songs that remind me of you</h2>
+        <small>We can listen to these together ♪</small>
+
+        <div class="song-list">
+          <div class="song">
+            <div class="song-info">
+              <span class="song-title">Our First Song</span>
+              <span class="song-artist">The memory of our beginning</span>
+            </div>
+            <span class="song-icon">🎧</span>
+          </div>
+
+          <div class="song">
+            <div class="song-info">
+              <span class="song-title">Happy Road Trips</span>
+              <span class="song-artist">For all the drives with you</span>
+            </div>
+            <span class="song-icon">🚗</span>
+          </div>
+
+          <div class="song">
+            <div class="song-info">
+              <span class="song-title">Calm Nights</span>
+              <span class="song-artist">For quiet evenings at home</span>
+            </div>
+            <span class="song-icon">🌙</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="tab-content" id="notes">
+        <h2>Little things I love about you</h2>
+        <small>Small moments, big love</small>
+        <ul class="note-list">
+          <li>The way you smile when you see our family.</li>
+          <li>How hard you work for us, even when you are tired.</li>
+          <li>Your silly jokes that only we understand.</li>
+          <li>The way you listen when I'm worried.</li>
+          <li>How you make every normal day feel special.</li>
+        </ul>
+      </div>
+
+      <!-- Gallery -->
+      <div class="tab-content" id="gallery">
+        <h2>Our Memories</h2>
+        <small>Replace text with real photos later 📷</small>
+        <div class="gallery">
+          <div class="gallery-item">🌅 First trip together</div>
+          <div class="gallery-item">🍰 Your last birthday</div>
+          <div class="gallery-item">👨‍👩‍👦 Family moment</div>
+          <div class="gallery-item">💍 Wedding memory</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const tab = btn.dataset.tab;
+
+        // button active
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // content active
+        contents.forEach(c => {
+          c.classList.toggle("active", c.id === tab);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
