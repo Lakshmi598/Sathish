@@ -197,8 +197,89 @@
       margin-bottom: 8px;
     }
 
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.4s ease;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      color: #ff4b7d;
+      cursor: pointer;
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .close-btn:hover {
+      background: #ffe6ef;
+      transform: rotate(90deg);
+    }
+
+    .read-letter-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff5c8a;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(255, 92, 138, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .read-letter-btn:hover {
+      background: #ff4b7d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 92, 138, 0.4);
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -232,24 +313,10 @@
       <div class="tab-content active" id="love">
         <h2>To My Husband</h2>
         <small>From your wife, with all my heart</small>
-        <p class="love-letter">
-Dear Sathish,
-
-Happy Birthday! 🎂💕
-
-Thank you for being my best friend, my safe place, and my biggest support.
-This little website is my small surprise for you, to say:
-
-I love you when you smile,
-I love you when you are tired,
-I love you even on the days that feel heavy.
-
-I'm so grateful to walk this life with you.
-Let's keep laughing, fighting together, and building our dreams side by side.
-
-With all my love,
-Lakshmi
+        <p style="margin-top: 15px; color: #5a2540; font-size: 15px;">
+          I wrote you a special letter for your birthday. Click the button below to read it. 💌
         </p>
+        <button class="read-letter-btn" onclick="openModal()">Read My Letter 💕</button>
       </div>
 
       <!-- Music -->
@@ -331,6 +398,33 @@ Lakshmi
     </div>
   </div>
 
+  <!-- Modal for Love Letter -->
+  <div class="modal" id="letterModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2 style="color: #ff4b7d; margin-bottom: 10px;">To My Husband</h2>
+      <small style="color: #999;">From your wife, with all my heart</small>
+      <p class="love-letter">
+Dear Sathish,
+
+Happy Birthday! 🎂💕
+
+Thank you for being my best friend, my safe place, and my biggest support.
+This little website is my small surprise for you, to say:
+
+I love you when you smile,
+I love you when you are tired,
+I love you even on the days that feel heavy.
+
+I'm so grateful to walk this life with you.
+Let's keep laughing, fighting together, and building our dreams side by side.
+
+With all my love,
+Lakshmi
+      </p>
+    </div>
+  </div>
+
   <script>
     const buttons = document.querySelectorAll(".tab-btn");
     const contents = document.querySelectorAll(".tab-content");
@@ -348,6 +442,22 @@ Lakshmi
           c.classList.toggle("active", c.id === tab);
         });
       });
+    });
+
+    // Modal functions
+    function openModal() {
+      document.getElementById("letterModal").classList.add("active");
+    }
+
+    function closeModal() {
+      document.getElementById("letterModal").classList.remove("active");
+    }
+
+    // Close modal when clicking outside
+    document.getElementById("letterModal").addEventListener("click", function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
     });
   </script>
 </body>
