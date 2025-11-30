@@ -368,33 +368,52 @@
       Happy Birthday, my love 💖 – made with love on 1 December.
     </p>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="love">💌 Love Letter</button>
-      <button class="tab-btn" data-tab="notes">📝 Notes</button>
-      <button class="tab-btn" data-tab="gallery">📸 Gallery</button>
-    </div>
-
     <div class="card">
-      <!-- Love Letter -->
-      <div class="tab-content active" id="love">
-        <h2>A Special Letter For You</h2>
-        <small>Click the seal to open the envelope 💌</small>
-        
-        <div class="envelope-container">
-          <div class="envelope" onclick="openModal()">
-            <div class="envelope-back">
-              <div class="envelope-flap"></div>
-              <div class="envelope-seal">OPEN</div>
-            </div>
+      <h2>Happy Birthday Sathish! 🎂</h2>
+      <small>I have a special surprise for you...</small>
+      
+      <div class="envelope-container">
+        <div class="envelope" onclick="openModal()">
+          <div class="envelope-back">
+            <div class="envelope-flap"></div>
+            <div class="envelope-seal">OPEN</div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal for Love Letter -->
+  <div class="modal" id="letterModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      
+      <!-- Love Letter -->
+      <h2 style="color: #ff4b7d; margin-bottom: 10px;">To My Husband</h2>
+      <small style="color: #999;">From your wife, with all my heart</small>
+      <p class="love-letter">
+Dear Sathish,
+
+Happy Birthday! 🎂💕
+
+Thank you for being my best friend, my safe place, and my biggest support.
+This little website is my small surprise for you, to say:
+
+I love you when you smile,
+I love you when you are tired,
+I love you even on the days that feel heavy.
+
+I'm so grateful to walk this life with you.
+Let's keep laughing, fighting together, and building our dreams side by side.
+
+With all my love,
+Lakshmi
+      </p>
 
       <!-- Notes -->
-      <div class="tab-content" id="notes">
-        <h2>Little things I love about you</h2>
-        <small>Small moments, big love</small>
+      <div style="margin-top: 30px;">
+        <h2 style="color: #ff4b7d; margin-bottom: 10px;">Little things I love about you</h2>
+        <small style="color: #999;">Small moments, big love</small>
         <ul class="note-list">
           <li>The way you smile when you see our family.</li>
           <li>How hard you work for us, even when you are tired.</li>
@@ -405,9 +424,9 @@
       </div>
 
       <!-- Gallery -->
-      <div class="tab-content" id="gallery">
-        <h2>Our Memories</h2>
-        <small>Special moments with you 📷</small>
+      <div style="margin-top: 30px;">
+        <h2 style="color: #ff4b7d; margin-bottom: 10px;">Our Memories</h2>
+        <small style="color: #999;">Special moments with you 📷</small>
         <div class="gallery">
           <div class="gallery-item">
             <img src="photo1.jpg.jpeg" alt="Memory 1">
@@ -438,52 +457,7 @@
     </div>
   </div>
 
-  <!-- Modal for Love Letter -->
-  <div class="modal" id="letterModal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h2 style="color: #ff4b7d; margin-bottom: 10px;">To My Husband</h2>
-      <small style="color: #999;">From your wife, with all my heart</small>
-      <p class="love-letter">
-Dear Sathish,
-
-Happy Birthday! 🎂💕
-
-Thank you for being my best friend, my safe place, and my biggest support.
-This little website is my small surprise for you, to say:
-
-I love you when you smile,
-I love you when you are tired,
-I love you even on the days that feel heavy.
-
-I'm so grateful to walk this life with you.
-Let's keep laughing, fighting together, and building our dreams side by side.
-
-With all my love,
-Lakshmi
-      </p>
-    </div>
-  </div>
-
   <script>
-    const buttons = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
-
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const tab = btn.dataset.tab;
-
-        // button active
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        // content active
-        contents.forEach(c => {
-          c.classList.toggle("active", c.id === tab);
-        });
-      });
-    });
-
     // Modal functions
     function openModal() {
       const envelope = document.querySelector('.envelope');
